@@ -9,11 +9,11 @@
   rules:
 
     - name: Run the windows daily demo workflow
-      condition: event.payload.short_description  == "Ames AAP Windows AWS Daily Demo"
+      condition: event.payload.short_description  == "Faith AAP Windows AWS Daily Demo"
       action:
         run_job_template:
           name: "print snow output"
-          organization: "AmesCO"
+          organization: "Default"
           job_args:
             extra_vars:
               ticket_number: "{{ event.payload.number }}"
@@ -24,7 +24,7 @@
       action:
         run_workflow_template:
           name: "Run workflow for the Linux Daily Demo"
-          organization: "AmesCO"
+          organization: "Default"
           job_args:
             extra_vars:
               ticket_number: "{{ event.payload.number }}"
@@ -35,7 +35,7 @@
       action:
         run_job_template:
           name: "print snow output"
-          organization: "AmesCO"
+          organization: "Default"
           job_args:
             extra_vars:
               ticket_number: "{{ event.payload.number }}"
